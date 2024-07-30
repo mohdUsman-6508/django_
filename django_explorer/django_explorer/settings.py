@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # isse pure project ko pata chal gya hai ki explore naam ki app project main aa chuki hai
+    'explore'
 ]
 
 MIDDLEWARE = [

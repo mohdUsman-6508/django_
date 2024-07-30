@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Default value {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <nav>This is navbar</nav>
+    {% comment %} yahan jo bhi content denge neeche wale block se replace ho
+    jayega {% endcomment %} {% block content %}{% endblock %}
+  </body>
+</html>
+
+{% comment %} ye common file hogi jo sab jagah use hogi {% endcomment %}

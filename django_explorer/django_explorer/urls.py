@@ -15,14 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
   
+  
     path('admin/', admin.site.urls),
     path("",views.home,name='home'),
     path("about/",views.about,name="about"),
-    path("contact/",views.contact,name="contact")
+    path("contact/",views.contact,name="contact"),
+    # jab bhi explore ka url hit kare to control transfer kar de explore.urls par(jo alag alag app hum bana rahe)
+    path("explore/",include('explore.urls'))
     
 ]
+
