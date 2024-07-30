@@ -1,0 +1,21 @@
+body {
+  background: rgb(4, 4, 60);
+  color: aquamarine;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+h {
+  margin-left: 10px;
+}
+
+p {
+  text-align: center;
+  font-size: 2em;
+}
