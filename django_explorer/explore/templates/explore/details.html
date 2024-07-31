@@ -1,0 +1,12 @@
+<!-- prettier-ignore -->
+{% extends "layout.html" %} 
+
+{% block title %} Details {% endblock %}
+
+ {% block content %}
+<h1>Chai description in details</h1>
+
+<div class="grid grid-cols-3 gap-4 m-4">
+  {{chai.id}} {{chai.name}} {{chai.description}}
+</div>
+{% endblock %}

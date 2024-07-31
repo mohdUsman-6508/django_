@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+# static method ko batana padta he ki setting me se mediaurl ko load kar le
 
 urlpatterns = [
   
@@ -29,5 +32,8 @@ urlpatterns = [
     path("explore/",include('explore.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
     
-]
+]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+# abhi tak django ko pata nahin he ki hum ne model add kiye he
+# use batane ke liye 2 command lagegi - "makemigrations","migrate"
 
