@@ -26,7 +26,8 @@ urlpatterns = [
     path("about/",views.about,name="about"),
     path("contact/",views.contact,name="contact"),
     # jab bhi explore ka url hit kare to control transfer kar de explore.urls par(jo alag alag app hum bana rahe)
-    path("explore/",include('explore.urls'))
+    path("explore/",include('explore.urls')),
+    path("__reload__/", include("django_browser_reload.urls")),
     
 ]
 

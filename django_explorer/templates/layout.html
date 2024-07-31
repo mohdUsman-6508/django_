@@ -1,3 +1,5 @@
+<!--prettier-ignore-->
+{% load static tailwind_tags %} 
 {% load static %}
 
 <!DOCTYPE html>
@@ -7,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Default value {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style.css' %}" />
+    {% tailwind_css %}
   </head>
   <body>
-    <nav>This is navbar</nav>
+    <nav class="bg-green-500">This is navbar</nav>
     {% comment %} yahan jo bhi content denge neeche wale block se replace ho
     jayega {% endcomment %} {% block content %}{% endblock %}
   </body>
