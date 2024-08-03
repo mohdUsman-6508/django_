@@ -11,5 +11,6 @@ urlpatterns = [
     path("",views.compass_search,name='compass_search'),
     # path("metal/",views.metal,name="metal")
     path('<int:chai_id>',views.chai_detail,name='chai_detail'),
+    path("chai_stores/",views.chai_store_view,name="chai_store_form")
 
 ]

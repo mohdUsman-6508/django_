@@ -24,9 +24,14 @@ class ChaiVariety(models.Model):
 # One to Many
 
 class ChaiReview(models.Model):
+  RATING_CHOICE=[('1','1'),
+                 ('2','2'),
+                 ('3','3'),
+                 ('4','4'),
+                 ('5','5')]
   chai=models.ForeignKey(ChaiVariety,on_delete=models.CASCADE,related_name='reviews')
   user=models.ForeignKey(User,on_delete=models.CASCADE)
-  rating=models.TextField()
+  rating=models.TextField(max_length=2,choices=RATING_CHOICE)
   comment=models.TextField()
   date_added=models.DateTimeField(default=timezone.now)
 
