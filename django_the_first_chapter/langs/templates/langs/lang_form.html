@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="min-h-screen bg-gray-100 py-10 px-4">
+  <!-- Page Header -->
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold text-sky-600">Enterprise Search</h1>
+    <p class="text-gray-600 mt-2">
+      Select a programming language to find enterprises using it
+    </p>
+  </div>
+
+  <!-- Search Card -->
+  <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+    <form method="POST" class="space-y-6">
+      {% csrf_token %}
+
+      <div>
+        <label class="block text-lg font-semibold text-gray-700 mb-2">
+          Programming Language
+        </label>
+
+        <div class="w-full text-black">{{ form.as_p }}</div>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition duration-300"
+      >
+        Search Enterprises
+      </button>
+    </form>
+  </div>
+
+  <!-- Results Section -->
+  {% if enterprises %}
+
+  <div class="max-w-4xl mx-auto mt-10">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Search Results</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {% for enterprise in enterprises %}
+
+      <div
+        class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300"
+      >
+        <h3 class="text-xl font-semibold text-gray-800">
+          {{ enterprise.name }}
+        </h3>
+
+        <p class="text-gray-500 mt-2">
+          Uses the selected programming language.
+        </p>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+
+  {% endif %}
+</div>
+
+{% endblock %}
